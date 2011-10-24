@@ -1,4 +1,4 @@
-body {
+body, input, textarea {
 	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: 62.5%;
 	font-weight: 300;
@@ -7,16 +7,16 @@ body {
 
 h1, h2, h3, h4, h5, h6 {}
 
-h1 {}
-h2 {}
-h3 {}
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.4em; }
 h4 {}
 h5 {}
 h6 {}
 
 p {
 	font-size: 1.3em;	
-	line-height: 1.5em;	
+	line-height: 1.65em;	
 }
 
 p:last-child {}
@@ -32,3 +32,30 @@ a:hover {
 
 strong {}
 em {}
+
+input,
+textarea { font-size: 1.1em; }
+
+/* Header */
+
+header h1,
+header h2 {
+	font-size: 1.8em;
+	line-height: 23px;
+	float: left;	
+}
+
+header h2 {
+	margin-left: 10px;
+	padding-left: 10px;
+	color: #aaa;
+	border-left: 1px solid #ddd;
+}
+
+/* Slides */
+
+/* Footer */
+
+footer {
+	font-size: 1.1em;
+}
