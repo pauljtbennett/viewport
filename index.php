@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 	<?php if (have_posts()) : ?>
-		<section id="slider">
+		<section class="flexslider">
 			<div class="slides">			
 				<?php while (have_posts()) : the_post(); ?>
 					<?php get_template_part('content-slide'); ?>
