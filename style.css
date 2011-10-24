@@ -1,0 +1,181 @@
+/*
+Theme Name: Viewport Refresh
+Theme URI: http://labs.paulicio.us/viewport/
+Description: A clean, image based layout
+Version: 1.0
+Author: Paul Bennett
+Author URI: http://paulicio.us
+Tags: pictures, images, simple, clean, viewport
+*/
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 62.5%;
+  font-weight: 300;
+  color: #555;
+}
+p {
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+a {
+  color: #222;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px solid #222;
+}
+body {
+  margin: 10px;
+  background: #eeeeee url(images/bg.png) repeat 0 0;
+}
+/* Header */
+/* Main Structure */
+#page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* Content Slides */
+#slider {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+}
+/* Footer */
