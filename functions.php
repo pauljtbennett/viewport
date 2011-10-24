@@ -1,4 +1,76 @@
-<?php 
+<?php
+
+/* Add support for featured images */
+add_theme_support('post-thumbnails');
+
+/* Automatically resize featured image */
+function post_thumb($post, $width = 100, $height = 100) {
+    if ($post) {
+        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+        $url = $image[0];
+
+        if (!$url) return false;
+
+        thumb($url, $width, $height);
+    }
+}
+
+/* Get thumb URL */
+function thumb($src, $width = 100, $height = 100, $zoom = 1)
+{
+	echo get_bloginfo('template_url') . '/thumb.php?src=' . $src . '&w=' . $width . '&h=' . $height . '&zc=' . $zoom;
+}
+
+function get_placeholder_image()
+{
+	return get_bloginfo('template_url') . '/images/placeholder.png';
+}
+
+function timesince($original)
+{
+	// array of time period chunks
+	$chunks = array(
+		array(60 * 60 * 24 * 365 , 'year'),
+		array(60 * 60 * 24 * 30 , 'month'),
+		array(60 * 60 * 24 * 7, 'week'),
+		array(60 * 60 * 24 , 'day'),
+		array(60 * 60 , 'hour'),
+		array(60 , 'minute'),
+		array(1 , 'second')
+	);
+
+	$today = time();
+	$since = $today - $original;
+
+	if ($since > 604800) {
+		$c = date("M jS", $original);
+
+		if ($since > 31536000) {
+				$c .= ", " . date("Y", $original);
+			}
+
+		return $c;
+
+	}
+
+	for ($i = 0, $j = count($chunks); $i < $j; $i++) {
+
+		$seconds = $chunks[$i][0];
+		$name = $chunks[$i][1];
+
+		// finding the biggest chunk (if the chunk fits, break)
+		if (($count = floor($since / $seconds)) != 0) {
+			break;
+		}
+	}
+
+	$c = ($count == 1) ? '1 '.$name : "$count {$name}s";
+
+	return $c . " ago";
+}
+
+
+/* ------------- old stuff -------------- */
 
 if ( function_exists('register_sidebar') )
     register_sidebar(array(
