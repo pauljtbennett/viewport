@@ -12,7 +12,11 @@
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-		<?php wp_enqueue_script('functions', get_bloginfo('template_directory') . '/js/functions.js', array('jquery'), null); ?>
+		<?php wp_deregister_script('jquery'); ?>
+
+		<?php wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', array(), null); ?>
+		<?php wp_enqueue_script('flexslider', get_bloginfo('template_directory') . '/js/flexslider/jquery.flexslider.js', array('jquery'), null); ?>
+		<?php wp_enqueue_script('functions',  get_bloginfo('template_directory') . '/js/functions.js', array('jquery'), null); ?>
 
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,6 +32,7 @@
 					<h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
 					<h2><?php bloginfo('description'); ?></h2>
 				</hgroup>
+				
 				<nav class="main">
 					<ul id="nav">
 						<li class="left"></li>
@@ -36,7 +41,8 @@
 						<li class="right"></li>
 					</ul>
 				</nav>
-				<ul id="searchbox">
-					<li><?php include (TEMPLATEPATH . '/searchform.php'); ?></li>
-				</ul>
+				
+				<?php get_template_part('searchform'); ?>
+
+				<div class="clearer"></div>
 			</header>
