@@ -145,15 +145,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-body {
+body, input, textarea {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 62.5%;
   font-weight: 300;
   color: #555;
 }
+h1 {
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.6em;
+}
+h3 {
+  font-size: 1.4em;
+}
 p {
   font-size: 1.3em;
-  line-height: 1.5em;
+  line-height: 1.65em;
 }
 a {
   color: #222;
@@ -162,20 +171,291 @@ a {
 a:hover {
   border-bottom: 1px solid #222;
 }
+input, textarea {
+  font-size: 1.1em;
+}
+/* Header */
+header h1, header h2 {
+  font-size: 1.8em;
+  line-height: 23px;
+  float: left;
+}
+header h2 {
+  margin-left: 10px;
+  padding-left: 10px;
+  color: #aaa;
+  border-left: 1px solid #ddd;
+}
+/* Slides */
+/* Footer */
+footer {
+  font-size: 1.1em;
+}
+/*
+ * jQuery FlexSlider v1.8
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+/* Browser Resets */
+.flex-container a:active, .flexslider a:active {
+  outline: none;
+}
+.slides, .flex-control-nav, .flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* FlexSlider Necessary Styles
+*********************************/.flexslider {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > article {
+  display: none;
+}
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {
+  max-width: 100%;
+  display: block;
+}
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+/* Clearfix for the .slides element */
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+html[xmlns] .slides {
+  display: block;
+}
+* html .slides {
+  height: 1%;
+}
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+  display: block;
+}
 body {
   margin: 10px;
   background: #eeeeee url(images/bg.png) repeat 0 0;
 }
 /* Header */
+header {
+  margin: 20px 0;
+}
+/* Search */
+#searchform {
+  float: right;
+}
+#searchform input {
+  width: 180px;
+  padding: 5px 8px;
+  color: #eee;
+  border: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #444444;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #555555), color-stop(1, #333333));
+  background: -ms-linear-gradient(bottom, #555555, #333333);
+  background: -moz-linear-gradient(center bottom, #555555 0%, #333333 100%);
+  -webkit-transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+}
+#searchform input:focus {
+  width: 300px;
+}
 /* Main Structure */
 #page {
   max-width: 960px;
   margin: 0 auto;
 }
 /* Content Slides */
-#slider {
-  width: 100%;
+.flexslider {
+  max-width: 940px;
+  position: relative;
   padding: 10px;
   background: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.flexslider:before, .flexslider:after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  bottom: 18px;
+  width: 70%;
+  max-width: 300px;
+  height: 30px;
+  background: transparent;
+  z-index: -1;
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.35);
+  -webkit-transform: skew(-15deg) rotate(-6deg);
+  -moz-transform: skew(-15deg) rotate(-6deg);
+  -ms-transform: skew(-15deg) rotate(-6deg);
+  -o-transform: skew(-15deg) rotate(-6deg);
+  transform: skew(-15deg) rotate(-6deg);
+}
+.flexslider:after {
+  left: auto;
+  right: 12px;
+  -webkit-transform: skew(15deg) rotate(6deg);
+  -moz-transform: skew(15deg) rotate(6deg);
+  -ms-transform: skew(15deg) rotate(6deg);
+  -o-transform: skew(15deg) rotate(6deg);
+  transform: skew(15deg) rotate(6deg);
+}
+.slides article {
+  max-width: 940px;
+  height: 500px;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+.slides article h2, .slides article figure, .slides article figcaption {
+  position: absolute;
+}
+.slides article img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.slides article h2, .slides article figcaption {
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #eee;
+  z-index: 10;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.slides article h2 a {
+  color: #eee;
+}
+.slides article h2 {
+  top: 10px;
+  left: 10px;
+}
+.slides article figcaption {
+  max-width: 50%;
+  padding: 8px 14px;
+  bottom: 10px;
+  right: 10px;
+}
+.flex-control-nav {
+  display: none;
+}
+.flex-direction-nav li {
+  width: 20px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  text-align: center;
+  background: #444444;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #555555), color-stop(1, #333333));
+  background: -ms-linear-gradient(bottom, #555555, #333333);
+  background: -moz-linear-gradient(center bottom, #555555 0%, #333333 100%);
+}
+.flex-direction-nav li:first-child {
+  left: -20px;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 20px;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 20px;
+  -moz-border-radius-topleft: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.flex-direction-nav li:last-child {
+  right: -20px;
+  -webkit-border-top-right-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.flex-direction-nav li a {
+  color: #ccc;
+  line-height: 36px;
+  font-size: 2em;
+  font-weight: bold;
 }
 /* Footer */
+footer {
+  margin-top: 10px;
+}
+footer nav {
+  float: right;
+}
+footer ul {
+  height: 18px;
+  float: right;
+}
+footer ul li {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid #ddd;
+  float: left;
+}
+footer ul li:first-child {
+  border: none;
+}
+/* Misc */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clearer {
+  clear: both;
+}
+header nav {
+  display: none;
+}
