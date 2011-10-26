@@ -285,7 +285,7 @@ header {
   margin: 0 auto;
 }
 /* Content Slides */
-.flexslider {
+.flexslider, .single article {
   max-width: 940px;
   position: relative;
   padding: 10px;
@@ -298,7 +298,10 @@ header {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.flexslider:before, .flexslider:after {
+.flexslider:before,
+.flexslider:after,
+.single article:before,
+.single article:after {
   content: '';
   position: absolute;
   left: 12px;
@@ -317,7 +320,7 @@ header {
   -o-transform: skew(-15deg) rotate(-6deg);
   transform: skew(-15deg) rotate(-6deg);
 }
-.flexslider:after {
+.flexslider:after, .single article:after {
   left: auto;
   right: 12px;
   -webkit-transform: skew(15deg) rotate(6deg);
@@ -326,17 +329,18 @@ header {
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg);
 }
-.slides article {
+article {
   max-width: 940px;
   height: 500px;
   position: relative;
   background: #fff;
   overflow: hidden;
 }
-.slides article h2, .slides article figure, .slides article figcaption {
+article h2, article figure, article figcaption {
   position: absolute;
 }
-.slides article img {
+article img {
+  max-width: 100%;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -344,7 +348,7 @@ header {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.slides article h2, .slides article figcaption {
+article h2, article figcaption {
   padding: 12px 14px;
   background: rgba(0, 0, 0, 0.8);
   color: #eee;
@@ -356,14 +360,14 @@ header {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.slides article h2 a {
+article h2 a {
   color: #eee;
 }
-.slides article h2 {
+article h2 {
   top: 10px;
   left: 10px;
 }
-.slides article figcaption {
+article figcaption {
   max-width: 50%;
   padding: 8px 14px;
   bottom: 10px;
@@ -425,6 +429,13 @@ header {
   line-height: 36px;
   font-size: 2em;
   font-weight: bold;
+}
+/* Single Post/Page */
+.single article {
+  max-width: 600px;
+}
+.single article .postmeta {
+  margin-top: 310px;
 }
 /* Footer */
 footer {

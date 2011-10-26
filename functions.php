@@ -6,10 +6,10 @@ add_theme_support('post-thumbnails');
 /* Automatically resize featured image */
 function post_thumb($post, $width = 100, $height = 100) {
     if ($post) {
-        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+        $image = str_replace(get_bloginfo('url'), '', wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large'));
         $url = $image[0];
 
-        if (!$url) return false;
+        if (!$url) $url = str_replace(get_bloginfo('url'), '', get_bloginfo('template_directory')) . '/images/placeholder.png';
 
         thumb($url, $width, $height);
     }
@@ -46,15 +46,13 @@ function timesince($original)
 		$c = date("M jS", $original);
 
 		if ($since > 31536000) {
-				$c .= ", " . date("Y", $original);
-			}
+			$c .= ", " . date("Y", $original);
+		}
 
 		return $c;
-
 	}
 
 	for ($i = 0, $j = count($chunks); $i < $j; $i++) {
-
 		$seconds = $chunks[$i][0];
 		$name = $chunks[$i][1];
 
