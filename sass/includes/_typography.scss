@@ -16,18 +16,16 @@ h6 {}
 
 p {
 	font-size: 1.3em;	
-	line-height: 1.65em;	
-}
+	line-height: 1.65em;
 
-p:last-child {}
+	&:last-child {}
+}
 
 a {
 	color: #222;
 	text-decoration: none;
-}
 
-a:hover {
-	border-bottom: 1px solid #222;
+	&:hover { border-bottom: 1px solid #222; };
 }
 
 strong {}
@@ -38,21 +36,21 @@ textarea { font-size: 1.1em; }
 
 /* Header */
 
-header h1,
-header h2 {
-	font-size: 1.8em;
-	line-height: 23px;
-	float: left;	
-}
+header {
+	h1,
+	h2 {
+		font-size: 1.8em;
+		line-height: 23px;
+		float: left;	
+	}
 
-header h2 {
-	margin-left: 10px;
-	padding-left: 10px;
-	color: #aaa;
-	border-left: 1px solid #ddd;
+	h2 {
+		margin-left: 10px;
+		padding-left: 10px;
+		color: #aaa;
+		border-left: 1px solid #ddd;
+	}
 }
-
-/* Slides */
 
 /* Footer */
 
