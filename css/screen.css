@@ -38,7 +38,7 @@ header h2 { margin-left: 10px; padding-left: 10px; color: #aaa; border-left: 1px
 /* Footer */
 footer { font-size: 1.1em; }
 
-body { margin: 10px; background: #eeeeee url(images/bg.png) repeat 0 0; }
+body { margin: 10px; background: #eeeeee url('../images/bg.png?1356189231') repeat 0 0; }
 
 /* Begin Header */
 header { margin: 20px 0; }
