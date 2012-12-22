@@ -7,6 +7,20 @@ $(document).ready(function() {
 		nextText: '&rsaquo;',
 		controlNav: false,
 		animationLoop: false,
+		pauseOnAction: false,
+		start: function(slider) {
+			slider.find('.flex-viewport').after('<div class="timer"><div class="inner"></div></div>');
+			slider.find('.timer .inner').animate({
+				width: '100%'
+			}, 7000, 'linear');
+		},
+		after: function(slider) {
+			slider.find('.timer .inner').stop().css({
+				width: 0
+			}).animate({
+				width: '100%'
+			}, 7000, 'linear');
+		},
 		end: function(slider) {
 			if ($('.next-page-link a').exists()) {
 				var $next_page_link = $('.next-page-link');
@@ -20,6 +34,8 @@ $(document).ready(function() {
 							$slides.each(function(i, e) {
 								slider.addSlide(e); // Add new slides
 							});
+
+							console.log(slider.canAdvance());
 
 							$next_page_link.html($new_next_page_link.html()); // Update next page link
 						}

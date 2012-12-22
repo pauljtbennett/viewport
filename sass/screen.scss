@@ -102,8 +102,6 @@ html[xmlns] .slides {display: block;}
 * html .slides {height: 1%;}
 .no-js .slides > li:first-child {display: block;}
 
-.flex-control-nav { display: none; }
-
 .flex-direction-nav {
 	li {
 		width: 20px;
@@ -168,6 +166,30 @@ html[xmlns] .slides {display: block;}
 		right: 12px;
 
 		@include transform(skew(15deg) rotate(6deg));	
+	}
+}
+
+.flexslider {
+	article {
+		img {
+			@include border-bottom-radius(0);
+		}
+	}
+
+	.timer {
+		width: 100%;
+		height: 5px;
+		background: #333;
+
+		@include border-bottom-radius(2px);
+
+		.inner {
+			width: 0;
+			height: 5px;
+			background: lighten(#333, 10%);
+
+			@include border-bottom-radius(2px);
+		}
 	}
 }
 
