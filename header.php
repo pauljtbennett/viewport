@@ -8,13 +8,13 @@
 
 		<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/screen.css" type="text/css" media="screen" />
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 		<?php wp_deregister_script('jquery'); ?>
 
-		<?php wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', array(), null); ?>
+		<?php wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', array(), null); ?>
 		<?php wp_enqueue_script('flexslider', get_bloginfo('template_directory') . '/js/flexslider/jquery.flexslider.js', array('jquery'), null); ?>
 		<?php wp_enqueue_script('functions',  get_bloginfo('template_directory') . '/js/functions.js', array('jquery'), null); ?>
 
