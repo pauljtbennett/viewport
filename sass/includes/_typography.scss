@@ -1,5 +1,5 @@
 body, input, textarea {
-	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 62.5%;
 	font-weight: 300;
 	color: #555;
@@ -15,10 +15,11 @@ h5 {}
 h6 {}
 
 p {
-	font-size: 1.3em;	
-	line-height: 1.65em;
+	margin-bottom: 15px;
+	font-size: 1.2em;	
+	line-height: 1.5em;
 
-	&:last-child {}
+	&:last-child { margin-bottom: 0; }
 }
 
 a {

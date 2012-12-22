@@ -1,0 +1,38 @@
+@media only screen and (max-width: 999px) {
+	body {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.flex-direction-nav {
+		li {
+			&:first-child {
+				left: 0;
+
+				a {
+					@include border-left-radius(0); 
+					@include border-right-radius(20px);
+				}
+			}
+
+			&:last-child {
+				right: 0;
+
+				a {
+					@include border-right-radius(0);
+					@include border-left-radius(20px);
+				}
+			}
+		}
+	}
+
+	.flexslider,
+	.single article {
+		padding: 0;
+		border: none;
+	}
+
+	article {
+		img { @include border-radius(0); }
+	}
+}

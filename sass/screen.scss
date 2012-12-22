@@ -113,17 +113,27 @@ html[xmlns] .slides {display: block;}
 		margin-top: -20px;
 		text-align: center;
 
-		@include background(linear-gradient(top, #333, #555));
-
-		&:first-child { left: -20px; @include border-left-radius(20px); }
-		&:last-child { right: -20px; @include border-right-radius(20px); }
+		&:first-child { left: -20px; }
+		&:last-child { right: -20px; }
 
 		a {
+			display: block;
+			width: 20px;
+			height: 40px;
 			color: #ccc;
 			line-height: 36px;
 			font-size: 2em;
-			font-weight: bold;			
+			font-weight: bold;
+			text-decoration: none;
+			border: none;
+
+			@include background(linear-gradient(top, #333, #555));
+
+			&.flex-disabled { display: none; }
 		}
+
+		&:first-child a { @include border-left-radius(20px); }
+		&:last-child a { @include border-right-radius(20px); }
 	}
 }
 
@@ -222,3 +232,4 @@ article {
 /* End Single Post/Page */
 
 @import "includes/_misc";
+@import "includes/_responsive";
