@@ -2,12 +2,15 @@
 
 	<?php if (have_posts()) : ?>
 		<section class="flexslider">
-			<div class="slides">			
+			<ul class="slides">			
 				<?php while (have_posts()) : the_post(); ?>
-					<?php get_template_part('content-slide'); ?>
+					<li><?php get_template_part('content-slide'); ?></li>
 				<?php endwhile; ?>
-			</div><!-- .slides -->
+			</ul><!-- .slides -->
 		</section><!-- #slider -->
+
+		<div class="hidden prev-page-link"><?php previous_posts_link(); ?></div>
+		<div class="hidden next-page-link"><?php next_posts_link(); ?></div>
 	<?php else : ?>
 	
 	<?php endif; ?>
