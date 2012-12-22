@@ -1,6 +1,7 @@
 (function($) { $.fn.extend({ exists: function() {return this.length>0;} }); })(jQuery);
 
 $(document).ready(function() {
+	var slide_duration = 8000;
 	$('.flexslider').flexslider({
 		animation: 'slide',
 		prevText: '&lsaquo;',
@@ -8,18 +9,19 @@ $(document).ready(function() {
 		controlNav: false,
 		animationLoop: false,
 		pauseOnAction: false,
+		slideshowSpeed: slide_duration,
 		start: function(slider) {
 			slider.find('.flex-viewport').after('<div class="timer"><div class="inner"></div></div>');
 			slider.find('.timer .inner').animate({
 				width: '100%'
-			}, 7000, 'linear');
+			}, slide_duration - 600, 'linear');
 		},
-		after: function(slider) {
+		before: function(slider) {
 			slider.find('.timer .inner').stop().css({
 				width: 0
 			}).animate({
 				width: '100%'
-			}, 7000, 'linear');
+			}, slide_duration - 600, 'linear');
 		},
 		end: function(slider) {
 			if ($('.next-page-link a').exists()) {
@@ -34,8 +36,6 @@ $(document).ready(function() {
 							$slides.each(function(i, e) {
 								slider.addSlide(e); // Add new slides
 							});
-
-							console.log(slider.canAdvance());
 
 							$next_page_link.html($new_next_page_link.html()); // Update next page link
 						}
