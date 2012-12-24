@@ -4,15 +4,33 @@
 @import "includes/_settings";
 @import "includes/_typography";
 
+* { @include box-sizing(border-box); }
+
 body {
 	margin: 10px;
 	background: #eee image-url('bg.png') repeat 0 0;
 }
 
+/* Begin Common Elements */
+
+input, textarea {
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 5px 8px;
+	border: 1px solid #eee;
+	background: #fafafa;
+
+	@include border-radius(2px);
+}
+
+input[type="submit"] { width: inherit; }
+
+/* End Common Elements */
+
 /* Begin Header */
 
 header {
-	margin: 20px 0;
+	margin: 20px 0 15px;
 
 	nav { display: none; }
 }
@@ -66,7 +84,7 @@ footer {
 /* Begin Main Structure */
 
 #page {
-	max-width: 960px;
+	max-width: 962px;
 	margin: 0 auto;
 }
 
@@ -135,9 +153,35 @@ html[xmlns] .slides {display: block;}
 	}
 }
 
-.flexslider,
-.single article {
-	max-width: 938px;
+.flexslider {
+	article {
+		img {
+			@include border-bottom-radius(0);
+		}
+	}
+
+	.timer {
+		width: 100%;
+		height: 5px;
+		background: #333;
+
+		@include border-bottom-radius(2px);
+
+		.inner {
+			width: 0;
+			height: 5px;
+			background: lighten(#333, 10%);
+
+			@include border-bottom-radius(2px);
+		}
+	}
+}
+
+/* End Slides */
+
+/* Begin Main */
+
+.main {
 	position: relative;
 	padding: 10px;
 	background: #fff;
@@ -169,36 +213,11 @@ html[xmlns] .slides {display: block;}
 	}
 }
 
-.flexslider {
-	article {
-		img {
-			@include border-bottom-radius(0);
-		}
-	}
-
-	.timer {
-		width: 100%;
-		height: 5px;
-		background: #333;
-
-		@include border-bottom-radius(2px);
-
-		.inner {
-			width: 0;
-			height: 5px;
-			background: lighten(#333, 10%);
-
-			@include border-bottom-radius(2px);
-		}
-	}
-}
-
-/* End Slides */
+/* End Main */
 
 /* Begin Article */
 
 article {
-	max-width: 938px;
 	position: relative;
 	background: #fff;
 	overflow: hidden;
@@ -244,14 +263,30 @@ article {
 /* Begin Single Post/Page */
 
 .single {
-	article {
-		max-width: 600px;
-		
-		.postmeta { margin-top: 10px; }
+	.post {
+		width: 600px;
+		margin: 10px 20px 10px 0;
+		padding-right: 17px;
+		border-right: 1px solid #eee;
 	}
 }
 
 /* End Single Post/Page */
+
+/* Begin Sidebar */
+
+#sidebar {
+	width: 300px;
+	margin: 10px 0;
+
+	ul {
+		li {
+			&.widget { margin-bottom: 10px; }
+		}
+	}
+}
+
+/* End Sidebar */
 
 @import "includes/_misc";
 @import "includes/_responsive";

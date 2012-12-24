@@ -5,7 +5,10 @@ body, input, textarea {
 	color: #555;
 }
 
-h1, h2, h3, h4, h5, h6 {}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 10px;
+	font-weight: 600;
+}
 
 h1 { font-size: 1.8em; }
 h2 { font-size: 1.6em; }
@@ -15,7 +18,7 @@ h5 {}
 h6 {}
 
 p {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	font-size: 1.2em;	
 	line-height: 1.5em;
 
@@ -40,6 +43,7 @@ textarea { font-size: 1.1em; }
 header {
 	h1,
 	h2 {
+		margin-bottom: 0;
 		font-size: 1.8em;
 		line-height: 23px;
 		float: left;	
@@ -50,6 +54,7 @@ header {
 		padding-left: 10px;
 		color: #aaa;
 		border-left: 1px solid #ddd;
+		font-weight: 300;
 	}
 }
 
