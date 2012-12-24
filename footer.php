@@ -1,7 +1,7 @@
 		<footer>
 			<nav>
 				<ul>
-					<li><a href="http://paulicio.us/viewport-a-free-wordpress-theme/">Viewport</a>, brought to you by <a href="http://www.smashingmagazine.com">Smashing Magazine</a></li>
+					<li><a href="http://pjtb.co.uk/themes/viewport/">Viewport</a></li>
 					<li><a href="http://wordpress.org/">WordPress</a></li>
 					<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
 					<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
