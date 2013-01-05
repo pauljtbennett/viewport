@@ -4,6 +4,30 @@
 		margin-right: 0;
 	}
 
+	header {
+		margin: 10px;
+
+		h1,
+		h2 {
+			float: none;
+			margin: 0 0 10px;
+			padding: 0;
+			border: none;
+		}
+
+		h1 { margin-bottom: 0; }
+	}
+
+	#searchform {
+		float: none;
+
+		input {
+			width: 100%;
+
+			&.focus { width: 100%; }
+		}
+	}
+
 	.flex-direction-nav {
 		li {
 			&:first-child {
@@ -32,10 +56,14 @@
 		border-right: none;
 
 		@include border-radius(0);
+
+		&:before,
+		&:after { display: none; }
 	}
 
 	article {
 		img { @include border-radius(0); }
+		figcaption { max-width: 90%; }
 	}
 
 	.single {
