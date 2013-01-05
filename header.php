@@ -20,6 +20,8 @@
 		<?php wp_enqueue_script('flexslider', get_bloginfo('template_directory') . '/js/flexslider/jquery.flexslider.js',	array('jquery'), null, true); ?>
 		<?php wp_enqueue_script('functions',  get_bloginfo('template_directory') . '/js/functions.js', 						array('jquery'), null, true); ?>
 
+		<?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
+
 		<!--[if lt IE 9]>
 			<script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
