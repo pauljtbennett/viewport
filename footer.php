@@ -5,10 +5,8 @@
 					<li><a href="http://wordpress.org/">WordPress</a></li>
 					<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
 					<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
-				</ul>
-				<div class="clearer"></div>
-				<ul>
-					<li><?php wp_register('','  |  '); ?> <?php wp_loginout(); ?></li>
+					<li><?php wp_register('', ''); ?></li>
+					<li><?php wp_loginout(); ?></li>
 					<li><a href="http://validator.w3.org/check/referer" title="This page validates as HTML5" class="valid">HTML5</a></li>
 				</ul>
 			</nav>
